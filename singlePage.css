@@ -1,0 +1,192 @@
+.clearfix:before,.clearfix:after {
+	content:"";
+	display:table;
+}
+
+.clearfix:after {
+	clear:both;
+}
+
+body {
+  margin: 0;
+  
+  
+}
+
+.section {
+	min-height: 500px;
+	padding-top: 20vh;
+	padding-bottom: 40px;
+}
+
+#fullpage{
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+
+
+/* main navigation fixed at top of each section with background opacity.
+Max width of navigation is limited also to 1024px */
+#mainNav
+{
+	position:fixed;
+	left: 10%;
+	width: 80%;
+	background-color: #C0C0C0;
+	z-index: 70;
+	text-align: center;
+
+}
+
+
+
+/* menu set inline to appear horizontally */
+#menu li {
+	display:inline-block;
+	margin: 0.4em;
+}
+
+/* text styling for menu */
+
+#menu {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+#menu li a
+{
+	color: #EEE8AA;
+	text-decoration: none;
+	padding-left: 0.4em;
+	padding-right: 0.4em;
+}
+
+#menu li.current a {
+	color: #B22222;
+}
+
+#menu li.active a
+{
+	color: #B22222;
+}
+
+#menu li:hover a{
+	color: #F08080;
+}
+
+#menu li.active a:hover
+{
+	color: #B22222;
+}
+
+
+/* general menu settings */
+#mainNav
+{
+	font-family: Marvel, sans-serif;
+	font-weight: bold;
+	font-size: 2.2em;
+}
+
+#mobile_menu_button {
+	display: none;
+}
+
+#mobile_menu {
+	display: none;
+}
+
+#menu_logo {
+	width: 50px;
+	position: absolute;
+	top: 5px;
+	left: 10px;
+}
+
+#menu_logo img {
+	width: 100%;
+}
+
+#menuContainer {
+	text-align: center;
+	
+}
+
+#arrow {
+	position: absolute;
+	bottom: -20px;
+}
+
+
+@media screen and (max-width: 1500px) {
+	
+	#mainNav {
+		width: 100%;
+		left: 0;
+	}
+	
+}
+
+@media screen and (max-width: 768px) {
+	
+	#mainNav {
+		font-family: Marvel, sans-serif;
+		font-weight: bold;
+		font-size: 1.9em;
+	}
+
+	#menu li {
+		display: block;
+		margin: 0;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		border-bottom : solid 1px #008080;
+	}
+	
+	#menu:nth-child(1) {
+		border-top : solid 1px #008080;
+	}
+	
+	#menu {
+		padding-left: 0px;
+	}
+	
+	#menuContainer {
+		height: 0;
+		width: 100%;
+		overflow: hidden;
+	}
+	
+	#mobile_menu_button {
+		display: block;
+		cursor: pointer;
+		position: absolute;
+		right: 10px;
+		top: 10px;
+	}
+	
+	#menu_logo{
+		width: 40px;
+		float: none;
+		padding-top: 0px;
+		position: absolute;
+		left: 10px;
+	}
+	
+	#mobile_menu {	
+		cursor: pointer;
+		display: block;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		color: #EEE8AA;
+		
+		
+
+	}
+	
+	#arrow {
+		display: none;
+	}
+
+	
+}

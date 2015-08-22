@@ -1,0 +1,99 @@
+		<script type="text/javascript">
+
+		document.getElementById("section1").style.height = windowHeight + "px";
+			document.getElementById("section2").style.height = windowHeight + "px";
+			document.getElementById("section3").style.height = windowHeight + "px";
+		    
+			var logo = document.getElementById("logo");	
+            var logoPos = logo.offsetTop;
+			
+			
+			var animTimer;
+			
+			document.getElementById("section1").style.height = windowHeight + "px";
+			document.getElementById("section2").style.height = windowHeight + "px";
+			document.getElementById("section3").style.height = windowHeight + "px";
+			
+			
+			content = document.getElementsByClassName("content");
+			
+			for (var i = 0; i < content.length; i++ ) {
+			    content[i].style.top = 0.3*windowHeight + "px";
+				content[i].style.left = 0.1*windowWidth + "px";
+			}
+			
+			
+		
+			function scrollWin (number) {
+			    var speed = 50;
+				dest = window.innerHeight*number;
+				
+				
+				animationTimer = setInterval(function(){
+
+						if(window.scrollY < dest){
+							window.scrollBy(0, speed);
+							if(window.scrollY > dest) stop();
+						}
+						else if(window.scrollY > dest){
+							window.scrollBy(0, -speed);
+							if(window.scrollY < dest) stop();
+
+						}
+						else{
+							stop();
+						}
+
+					}, 20)
+				
+				function stop(){
+					clearInterval(animationTimer);
+					window.scrollTo(0, dest);
+				}
+				
+
+            }	
+
+            function checkWindowSize(){
+				var newWindowWidth = window.innerWidth;
+				var newWindowHeight = window.innerHeight;
+	
+				if ( newWindowWidth != windowWidth || newWindowHeight != windowHeight){
+					windowWidth = newWindowWidth;
+					windowHeight = newWindowHeight;
+					for (var i = 0; i < content.length; i++ ) {
+						content[i].style.top = 0.3*windowHeight + "px";
+						content[i].style.left = 0.1*windowWidth + "px";
+					}
+					location.reload();
+				}
+			}
+			
+            setInterval('checkWindowSize()',500);	
+
+            /* Parallax effect on logo*/
+
+            window.requestAnimationFrame = window.requestAnimationFrame
+                                        || window.mozRequestAnimationFrame
+                                        || window.webkitRequestAnimationFrame
+                                        || window.msRequestAnimationFrame
+                                        || function(f){setTimeout(f, 1000/60)}										
+            
+            function parallaxLogo () {
+			    var scrollAmmount = window.pageYOffset;
+				logo.style.top =  (logoPos - scrollAmmount * .5) + 'px';
+				
+            }
+
+            window.addEventListener('scroll', function () {
+			    requestAnimationFrame(parallaxLogo())
+			},false)			
+
+        </script>	
+function () { 
+		windowWidth = $(window).width();
+		windowHeight = $(window).height();
+		
+		$(".section").css({
+		"height" : windowHeight
+	}

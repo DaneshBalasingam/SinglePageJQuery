@@ -1,0 +1,50 @@
+#section1 {
+	background-image: url(images/homebackground.jpg);
+	background-repeat: no-repeat;
+	width: 100%;
+	max-width: 1024px;
+	margin-left: auto;
+	margin-right: auto;
+   background-color: transparent; 
+
+}
+
+#mainImage
+{
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+
+#section2 {
+   background-image: url(images/mountain1.jpg);
+   background-size: cover;
+  
+}
+
+#section3 {
+   background-color: green;
+  
+   
+   
+}
+
+.content {
+	width: 70%;
+	margin: 0 auto;
+	font-family: Marvel, sans-serif;
+	font-size: 1.9em;
+	background-color: red;
+	
+}
+
+@media screen and (max-width: 768px) {
+	#mainImage {
+		width: 90%;
+	}
+	
+	#mainImage img{
+		width: 100%;
+	}
+}
